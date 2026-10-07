@@ -3,7 +3,7 @@ name: PR title check
 on:
   pull_request:
     types: [opened, reopened, edited, synchronize]
-    branches: [8.x]
+    branches: [main]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number }}
