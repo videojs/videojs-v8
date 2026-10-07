@@ -35,7 +35,7 @@ jobs:
     runs-on: ${{matrix.os}}
     steps:
     - name: checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
 
     - name: read node version from .nvmrc
       run: echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_OUTPUT
