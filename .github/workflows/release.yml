@@ -19,7 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write      # Required for creating a release
-      discussions: write   # Required for creating a release
       id-token: write      # Required for provenance
       packages: write      # Required for publishing
     steps:
@@ -30,11 +29,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Tag filters can't express a branch, so refuse v8 tags that aren't on 8.x.
-      - name: ensure the tag is on the 8.x branch
+      # Tag filters can't express a branch, so refuse tags that aren't on main.
+      - name: ensure the tag is on main
         run: |
-          if ! git merge-base --is-ancestor "$GITHUB_SHA" origin/8.x; then
-            echo "::error::$GITHUB_REF_NAME is not on the 8.x branch; v8 releases are published from 8.x only"
+          if ! git merge-base --is-ancestor "$GITHUB_SHA" origin/main; then
+            echo "::error::$GITHUB_REF_NAME is not on main; v8 releases are published from main only"
             exit 1
           fi
 
@@ -82,7 +81,6 @@ jobs:
           token: ${{github.token}}
           prerelease: true
           files: dist/*.zip
-          discussion_category_name: Releases
 
   deploy:
     permissions:
