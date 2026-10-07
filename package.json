@@ -82,7 +82,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/videojs/video.js.git"
+    "url": "https://github.com/videojs/videojs-v8.git"
   },
   "publishConfig": {
     "tag": "next-8"
