@@ -4,7 +4,7 @@
 
 [![NPM][npm-icon]][npm-link]
 
-**Update:** Big changes coming in Video.js 10, early 2026! [Read the discussion.](https://github.com/videojs/video.js/discussions/9035)
+**Video.js 8 is in maintenance mode.** It gets security fixes and a best effort on bug fixes until October 1, 2028; see the [security policy](SECURITY.md). Video.js 10 is the current version and lives in [videojs/video.js](https://github.com/videojs/video.js). To upgrade, use the migration guide for [HTML](https://videojs.org/docs/framework/html/guides/migrate-from-video-js-8) or [React](https://videojs.org/docs/framework/react/guides/migrate-from-video-js-8).
 
 Video.js is a powerful and customizable open-source video player that runs smoothly across all major web platforms, including desktop, mobile, and Smart TVs.
 
