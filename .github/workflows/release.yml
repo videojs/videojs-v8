@@ -76,7 +76,7 @@ jobs:
         if: env.NETLIFY_BASE != ''
 
       - name: Create Github release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v3
         with:
           body_path: CHANGELOG-LATEST.md
           token: ${{github.token}}
