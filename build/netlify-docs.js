@@ -12,11 +12,18 @@ if (process.env.BRANCH === 'main' && semver.valid(output.trim()) === null) {
 } else {
   sh.exec('npm run docs:api');
 
-  // move docs/_redirects into the root of the docs site
-  //
-  // this is needed because the root of the docs site is docs/api, which is not
-  // in version control.
+  // the root of the docs site is docs/api, which is not in version control.
+  // legacy.videojs.org proxies /api/* to this site, so the API docs are nested
+  // under api/ to keep their URLs (and the redirects Netlify adds for them)
+  // the same on both sites.
   const docsPath = path.join(__dirname, '..', 'docs');
+  const sitePath = path.join(docsPath, 'api');
+  const tmpPath = path.join(docsPath, 'api-tmp');
 
-  sh.cp(path.join(docsPath, '_redirects'), path.join(docsPath, 'api', '_redirects'));
+  sh.mv(sitePath, tmpPath);
+  sh.mkdir('-p', sitePath);
+  sh.mv(tmpPath, path.join(sitePath, 'api'));
+
+  // move docs/_redirects into the root of the docs site
+  sh.cp(path.join(docsPath, '_redirects'), path.join(sitePath, '_redirects'));
 }

@@ -19,7 +19,7 @@ module.exports = {
       menu: [
         {
           title: 'Video.js website',
-          link: 'https://videojs.com',
+          link: 'https://legacy.videojs.org',
           class: 'link-vjs',
         },
         {
@@ -33,9 +33,9 @@ module.exports = {
           class: 'link-tw',
         },
       ],
-      favicon: 'https://videojs.com/favicon.ico',
+      favicon: 'https://legacy.videojs.org/favicon.ico',
       footer:
-        '<span class="copyright"><a href="https://videojs.com">Video.js</a> is a free and open source HTML5 video player. © Video.js Contributors. <a href="https://github.com/videojs/video.js/blob/master/LICENSE" class="button blue" target="_blank">View license</a></span>',
+        '<span class="copyright"><a href="https://legacy.videojs.org">Video.js</a> is a free and open source HTML5 video player. © Video.js Contributors. <a href="https://github.com/videojs/video.js/blob/master/LICENSE" class="button blue" target="_blank">View license</a></span>',
       include_css: ['./build/docs/styles/videojs.css'],
       displayModuleHeade: true,
       meta: [
