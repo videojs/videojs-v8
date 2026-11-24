@@ -140,7 +140,7 @@ Website hosting is sponsored by [Netlify][netlify]
 
 [builtwith]: https://trends.builtwith.com/media/VideoJS
 
-[contributing]: https://github.com/videojs/admin/blob/main/CONTRIBUTING.md
+[contributing]: CONTRIBUTING.md
 
 [docs]: https://docs.videojs.com
 
